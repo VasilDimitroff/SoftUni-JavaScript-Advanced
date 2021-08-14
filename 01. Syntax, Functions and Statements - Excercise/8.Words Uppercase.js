@@ -1,22 +1,29 @@
 function wordsUppercase(str) {
 
-    let newString = '';
-    for (let i = 0; i < str.length; i++) {
+    let array = [];
+    let tempStr = '';
+    for (let i = 0; i <= str.length; i++) {
+        let isInside = false;
+
+        if (i == str.length) {
+            array.push(tempStr);
+            break;
+        }
 
         if (str[i].match(/[A-z]/)) {
-            newString += str[i].toUpperCase();
-        } else if(str[i] == ' ' || str[i] == '.') {
-            
-            if(str[i-1] == '.'){
-                continue;
-            }
-            newString += ' ';
-        }
+            tempStr += str[i].toUpperCase();
+            isInside = true;
+        }  
+         
+        if (isInside === false) {
+            array.push(tempStr);
+            tempStr='';
+            array.push(str[i]);
+        }       
     }
 
-    let array = newString.split(' ');
+    let newArray = array.filter(e => e.match(/[A-z]/));
 
-    console.log(array.join(', '));
+    console.log(newArray.join(', '));
 }
-
-wordsUppercase('Functions in JS can be nested, i.e. hold other functions');
+wordsUppercase('Funcs in JS');
