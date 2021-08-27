@@ -9,7 +9,7 @@ function createSortedList(){
         }
     
         remove = function(index){
-            if (index > -1) {
+            if (index > -1 && index < this.numbers.length) {
                 this.numbers.splice(index, 1);
             }
             this.numbers.sort(function(a, b){return a-b});
@@ -17,7 +17,7 @@ function createSortedList(){
         }
     
         get = function(index){
-            if (index > -1) {
+            if (index > -1 && index < this.numbers.length) {
                return this.numbers[index];
             }
             return;
