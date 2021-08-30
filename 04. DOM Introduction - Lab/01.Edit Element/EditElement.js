@@ -3,12 +3,9 @@ function editElement(elementById, match, replacer) {
     // match and replacer.
    // You have to replace all occurrences of match inside the text content of the given elements
     // with replacer.
-    console.log(elementById);
 
-    let element = elementById;
-
-    if (element.innerHTML.includes(match)) {
-        let newStr = element.innerHTML.replace(match, replacer);
-        element.innerHTML = newStr;
+    if (elementById.innerHTML.includes(match)) {
+        let newStr = elementById.innerHTML.replace(match, replacer);
+        elementById.innerHTML = newStr;
     }     
 }
