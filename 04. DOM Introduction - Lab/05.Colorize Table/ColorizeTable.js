@@ -6,7 +6,6 @@ function colorize() {
 
         if (index % 2 != 0) {
             element.style.backgroundColor = 'Teal';
-        }
-        
+        }   
     }
 }
