@@ -26,10 +26,7 @@ function generateReport() {
                     let currentRowName = checkboxElements[td].textContent;
                     let currentProp = tdElements[td];
                     column[currentRowName.trim().toLowerCase()] = currentProp.textContent;
-                  // console.log(currentRowName +':');
-                  // console.log(column[currentRowName]);
-                }
-                
+                }            
             }            
           
         columns.push(column);  
