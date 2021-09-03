@@ -53,7 +53,7 @@ function solve() {
          if (!productNames.includes(currentProduct.name)) {
             productNames.push(currentProduct.name);
          }
-        
+      
          productPriceSum += currentProduct.price;
       } 
       
@@ -67,7 +67,7 @@ function solve() {
       for (let index = 0; index < allAddButtonsElements.length; index++) {
          const currentButton = allAddButtonsElements[index];
          currentButton.disabled = true;
-      }
+      } 
 
       checkoutElement.disabled = true;
    }
