@@ -30,8 +30,7 @@ function solve(data, criteria){
     } else{
         for (let index = 0; index < filteredEmployees.length; index++) {
             const employee = filteredEmployees[index];
-            console.log(`${index}. ${employee.first_name} ${employee.last_name} - ${employee.email}`);
-            
+            console.log(`${index}. ${employee.first_name} ${employee.last_name} - ${employee.email}`);  
         }
     }
 }
