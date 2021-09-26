@@ -33,10 +33,10 @@ function solution (){
 
         else if (command === 'prepare') {
             if (ingredient === 'apple') {
-                if (product.carbohydrate >= 1) {
-                    if (product.flavour >= 2) {
-                        product.carbohydrate -= 1;
-                        product.flavour -=2;
+                if (product.carbohydrate >= 1 * quantity) {
+                    if (product.flavour >= 2 * quantity) {
+                        product.carbohydrate -= 1 * quantity;
+                        product.flavour -=2 * quantity;
                         return 'Success';
                     } else {
                         return `Error: not enough flavour in stock`; 
@@ -47,10 +47,10 @@ function solution (){
             }
 
             else if (ingredient === 'lemonade') {
-                if (product.carbohydrate >= 10) {
-                    if (product.flavour >= 20) {
-                        product.carbohydrate -= 10;
-                        product.flavour -=20;
+                if (product.carbohydrate >= 10 * quantity) {
+                    if (product.flavour >= 20 * quantity) {
+                        product.carbohydrate -= 10 * quantity;
+                        product.flavour -=20 * quantity;
                         return 'Success';
                     } else {
                         return `Error: not enough flavour in stock`; 
@@ -61,12 +61,12 @@ function solution (){
             }
 
             else if (ingredient === 'burger') {
-                if (product.carbohydrate >= 5) {
-                    if (product.fat >= 7) {
-                        if (product.flavour >= 3) {
-                            product.carbohydrate -= 5;
-                            product.flavour -= 3;
-                            product.fat -= 7;
+                if (product.carbohydrate >= 5 * quantity) {
+                    if (product.fat >= 7 * quantity) {
+                        if (product.flavour >= 3 * quantity) {
+                            product.carbohydrate -= 5 * quantity;
+                            product.flavour -= 3 * quantity;
+                            product.fat -= 7 * quantity;
                             return 'Success';
                         } else {
                             return `Error: not enough flavour in stock`; 
@@ -81,12 +81,12 @@ function solution (){
             }
 
             else if (ingredient === 'eggs') {
-                if (product.protein >= 5) {
-                    if (product.fat >= 1) {
-                        if (product.flavour >= 1) {
-                            product.protein -= 5;
-                            product.flavour -= 1;
-                            product.fat -= 1;
+                if (product.protein >= 5 * quantity) {
+                    if (product.fat >= 1 * quantity) {
+                        if (product.flavour >= 1 * quantity) {
+                            product.protein -= 5 * quantity;
+                            product.flavour -= 1 * quantity;
+                            product.fat -= 1 * quantity;
                             return 'Success';
                         } else {
                             return `Error: not enough flavour in stock`; 
@@ -101,14 +101,14 @@ function solution (){
             }
 
             else if (ingredient === 'turkey') {
-                if (product.protein >= 10) {
-                    if (product.carbohydrate >= 10) {
-                        if (product.fat >= 10) {
-                            if (product.flavour >= 10) {
-                                product.protein -= 10;
-                                product.carbohydrate -= 10;
-                                product.fat -= 10;
-                                product.flavour -= 10;
+                if (product.protein >= 10 * quantity) {
+                    if (product.carbohydrate >= 10 * quantity) {
+                        if (product.fat >= 10 * quantity) {
+                            if (product.flavour >= 10 * quantity) {
+                                product.protein -= 10 * quantity;
+                                product.carbohydrate -= 10 * quantity;
+                                product.fat -= 10 * quantity;
+                                product.flavour -= 10 * quantity;
                                 return 'Success';
                             } else {
                                 return `Error: not enough flavour in stock`; 
