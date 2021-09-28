@@ -1,3 +1,18 @@
 function getArticleGenerator(articles) {
-    // TODO
+    articlesArray = articles.reverse();
+    
+    function showNext(){
+
+        if (articlesArray.length < 1) {
+            return;
+        }
+        let mainDivElement = document.querySelector('#content');
+
+        let articleElement = document.createElement('article');
+        articleElement.innerHTML = articlesArray.pop();
+
+        mainDivElement.appendChild(articleElement);
+        console.log(mainDivElement);
+    }
+    return showNext
 }
