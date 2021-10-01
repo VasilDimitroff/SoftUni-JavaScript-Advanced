@@ -12,6 +12,12 @@ function solve() {
     let buttonEl = document.createElement('button');
 
 
+    let archLiElement = document.createElement('li');
+    let archSpanEl = document.createElement('span');
+    let archStrongElFirst = document.createElement('strong');
+    let archDeleteButtonEl = document.createElement('button');
+
+
     function onScreen(e){
         e.preventDefault();
         let parent = e.target.parentElement;
@@ -44,18 +50,25 @@ function solve() {
     function archiveMovie(e){
         e.preventDefault();
         ticketsSold = e.target.previousSibling.value;
-        moviePrice = e.target.previousSibling.previousSibling.textContent;
-        
+
+        moviePrice = e.target.previousSibling.previousSibling.textContent;      
         movieName = e.target.parentElement.previousSibling.previousSibling.textContent;
         hallName = e.target.parentElement.previousSibling.textContent;
  
         if (!ticketsSold) {
             return;
         }
-        
-        let archiveEl = document.querySelector('#archive');
 
-        archiveEl.innerHTML = 'tuk';
+        let totalAmount = ticketsSold * moviePrice
+      
+        let archUlElement = document.querySelectorAll('ul')[1];
+        archUlElement.appendChild(archLiElement);
+        archLiElement.appendChild(archSpanEl);
+        archLiElement.appendChild(archStrongElFirst);
+        archLiElement.appendChild(archDeleteButtonEl);
+
+        archSpanEl.textContent = movieName;
+        archStrongElFirst.textContent = `Total amount: ${totalAmount.toFixed(2)}`;
+        archDeleteButtonEl.textContent = 'Delete';
     }
-    
 }
