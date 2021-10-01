@@ -12,7 +12,6 @@ function getArticleGenerator(articles) {
         articleElement.innerHTML = articlesArray.pop();
 
         mainDivElement.appendChild(articleElement);
-        console.log(mainDivElement);
     }
     return showNext
 }
