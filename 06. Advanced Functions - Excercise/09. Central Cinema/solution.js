@@ -70,5 +70,28 @@ function solve() {
         archSpanEl.textContent = movieName;
         archStrongElFirst.textContent = `Total amount: ${totalAmount.toFixed(2)}`;
         archDeleteButtonEl.textContent = 'Delete';
+
+        let liElementToRemove = e.target.parentElement.previousSibling.previousSibling.parentElement;
+        liElementToRemove.remove();
+    }
+
+    archDeleteButtonEl.addEventListener('click', deleteMovie);
+
+    function deleteMovie(e){
+        let liElementToRemove = e.target.parentElement;
+        liElementToRemove.remove();
+    }
+
+    let buttonClear = document.querySelector('#archive').children[2];
+    buttonClear.addEventListener('click', clearList);
+
+    function clearList(e){
+        let ulElementToRemove = document.querySelectorAll('ul')[1];
+        let liElementsToRemove = ulElementToRemove.children;
+
+        for(i = 0; i < liElementsToRemove.length; i++){
+            let li = liElementsToRemove[i];
+            li.remove();
+        }
     }
 }
