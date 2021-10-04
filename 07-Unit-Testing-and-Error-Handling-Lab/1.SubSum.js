@@ -1,9 +1,5 @@
 function subSum(array, startIndex, endIndex){
 
-    //•	If the first element is not an array, return NaN
-//	If the start index is less than zero, consider its value to be a zero
-//	If the end index is outside the bounds of the array, assume it points to the last index of the array
-
     if(!Array.isArray(array) || array.some(e => typeof(e) != 'number')){
         return NaN;
     }
