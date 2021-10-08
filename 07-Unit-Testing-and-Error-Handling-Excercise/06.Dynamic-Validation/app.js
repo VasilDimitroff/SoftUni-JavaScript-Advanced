@@ -1,5 +1,5 @@
 function validate() {
-    let validationRegex = /^[a-z]+@{1}[a-z]+\.[a-z]+$/;
+    let validationRegex = /^[a-z]+@{1}[a-z\.]+$/;
 
    let usernameInput = document.querySelector('input');
    usernameInput.addEventListener('change', checkValidity);
@@ -11,5 +11,4 @@ function validate() {
            usernameInput.classList.remove('error');
        }
    }
-
 }
