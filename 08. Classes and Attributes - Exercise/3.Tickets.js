@@ -19,15 +19,20 @@ function solve(ticketInfo, sortingCriteria){
         let ticket = new Ticket(destination, price, status);
         tickets.push(ticket);
     }
-
     if (sortingCriteria == 'destination') {
-        tickets = tickets.sort().reverse();
+        tickets = tickets.sort((a,b) => (a.destination > b.destination) ? 1 : ((b.destination > a.destination) ? -1 : 0));
     }
     else if (sortingCriteria == 'price') {
-        tickets = tickets.sort(a, b => a.price - b.price);
+        tickets = tickets.sort((a, b) => {
+            if(a.price != b.price) {
+                a.price - b.price
+            } else {
+                return;
+            }    
+        });
     }
     else if (sortingCriteria == 'status') {
-        tickets = tickets.sort();
+        tickets = tickets.sort((a,b) => (a.status > b.status) ? 1 : ((b.status > a.status) ? -1 : 0));
     }
     
     return tickets;
@@ -37,4 +42,4 @@ console.log(solve(['Philadelphia|94.20|available',
 'New York City|95.99|available',
 'New York City|95.99|sold',
 'Boston|126.20|departed'],
-'destination'));
+'price'));
