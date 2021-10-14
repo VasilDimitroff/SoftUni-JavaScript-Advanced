@@ -4,11 +4,13 @@ class List{
    add(number){
        this.list.push(number);
        this.list.sort((a, b) => a - b);
+       this.size++;
    }
    remove(index){
     if (index > -1 && index < this.list.length) {
         this.list.splice(index, 1);
         this.list.sort((a, b) => a - b);
+        this.size--;
     }
    }
 
@@ -18,13 +20,13 @@ class List{
     }    
    }
 
-   size = this.list.length;  
+   size = this.list.length;
 }
 
 let list = new List();
 list.add(5);
-list.add(6);
-list.add(7);
-console.log(list.get(1)); 
-list.remove(1);
-console.log(list.get(1));
+list.add(3);
+
+console.log(list.get(0)); 
+list.remove(0);
+console.log(list.size);
